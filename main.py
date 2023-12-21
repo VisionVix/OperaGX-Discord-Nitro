@@ -22,12 +22,13 @@ payload = {
     'partnerUserId': '' 
 }
 
-compile_after_requests = 5000
+compile_after_requests = 5000 # As much as you like on how many links you want to generate.
 
-response_dir = "responses"
+response_dir = "links" # The name of our directory where each link is stored
 
 os.makedirs(response_dir, exist_ok=True)
 
+# It searches for the latest response number, and if it exists, it starts right after it.
 def get_latest_response_number():
     response_numbers = [int(filename.split('_')[1].split('.')[0]) for filename in os.listdir(response_dir) if filename.startswith('response_')]
     return max(response_numbers, default=0)
@@ -53,9 +54,11 @@ def send_request_and_save():
 
         print(f'Response {response_number}: {token_url}\n')
 
+    # It handles errors.
     except requests.RequestException as e:
         print(f'Request failed for response number {response_number}.\n{e}\n')
 
+# It compiles all the links after the desired amount is reached.
 def compile_responses():
     compiled_responses_file = "compiled_responses.txt"
     with open(compiled_responses_file, "a") as compiled_file:
