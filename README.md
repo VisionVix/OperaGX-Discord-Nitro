@@ -2,8 +2,6 @@
 
 NOTE: THIS WILL ONLY WORK FOR A WHILE, AND I DON'T RECOMMEND USING THIS CODE.
 
-This Python code uses cURL (bash) to make requests.
-
 How to operate:
 1. Download Opera GX, as it is a necessity.
 2. Head to https://opera.com/gx/discord-nitro.
