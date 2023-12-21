@@ -24,9 +24,9 @@ payload = {
 
 compile_after_requests = 5000 # As much as you like on how many links you want to generate.
 
-response_dir = "links" # The name of our directory where each link is stored
+response_dir = "links"
 
-os.makedirs(response_dir, exist_ok=True)
+os.makedirs(response_dir, exist_ok=True) # If the directory does not exist, it creates a new one.
 
 # It searches for the latest response number, and if it exists, it starts right after it.
 def get_latest_response_number():
